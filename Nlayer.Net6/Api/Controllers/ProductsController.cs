@@ -1,6 +1,8 @@
-﻿using AutoMapper;
+﻿using Api.Filters;
+using AutoMapper;
 using Core;
 using Core.DTOs;
+using Core.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +12,17 @@ namespace Api.Controllers
     [ApiController]
     public class ProductsController : BaseController<ProductsController>
     {
+        public ProductsController(IMapper mapper, IProductService productService) : base(mapper, productService)
+        {
+        }
+
+        //Get api/product/GetProductWithCategory metot ismi vermeden de yapabiliriz.
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetProductWithCategory()
+        {
+            return CreateActionResult(await _productService.GetProductWithCategory());
+        }
+
         [HttpGet]
         public async Task<IActionResult> All()
         {
@@ -20,10 +33,11 @@ namespace Api.Controllers
             return Ok(CustomResponseDto<List<ProductDto>>.Success(200, productsDto));
         }
 
-        [HttpGet("{id}")] 
+        [ServiceFilter(typeof(NotFoundFilter<Product>))]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var product = await this._productService.GetByIdAsync(id); 
+            var product = await this._productService.GetByIdAsync(id);
 
             var productsDto = _mapper.Map<ProductDto>(product);
 
@@ -33,7 +47,7 @@ namespace Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Save(ProductDto productDto)
         {
-            var product = await _productService.AddAsync(_mapper.Map<Product>(productDto));  
+            var product = await _productService.AddAsync(_mapper.Map<Product>(productDto));
 
             var productsDto = _mapper.Map<ProductDto>(product);
 
