@@ -21,7 +21,7 @@ namespace Repository.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
+             
             modelBuilder.Entity("Core.Category", b =>
                 {
                     b.Property<int>("Id")

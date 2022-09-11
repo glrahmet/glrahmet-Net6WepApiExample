@@ -3,7 +3,6 @@ using Core.Services;
 using Core.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 using Repository;
-using Service.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,14 +21,14 @@ namespace Service.Services
             _repository = repository;
             _unitOfWork = unitOfWork;
         }
-
+         
         public async Task<T> AddAsync(T entity)
         {
             await _repository.AddAsync(entity);
             await _unitOfWork.CommitChangesAsync();
             return entity;
         }
-
+         
         public async Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities)
         {
             await _repository.AddRangeAsync(entities);
@@ -49,10 +48,7 @@ namespace Service.Services
 
         public async Task<T> GetByIdAsync(int id)
         {
-            var hasProduct = await _repository.GetByIdAsync(id);
-            if (hasProduct == null)
-                throw new ClientSideException($"{typeof(T).Name} ({id}) not found");
-
+            var hasProduct = await _repository.GetByIdAsync(id);          
             return hasProduct;
         }
 

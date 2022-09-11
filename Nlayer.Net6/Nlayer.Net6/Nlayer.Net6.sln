@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{0567BD7F-49F5-4A60-A9AA-A0072B68FAFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{1B1D747F-BA8B-4951-A0D8-85AD6C2B6D71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{744E5482-7EB2-487A-87EC-68B16B4F2E2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{8B67D17D-69A9-4FA2-A8A8-137E7A519760}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{C04CAE85-8F6C-4DEE-B5A4-D91D9C6F58BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching", "Caching\Caching.csproj", "{53B1CDD4-6BB0-4C0A-BF17-0B26C331AD3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +45,6 @@ Global
 		{53B1CDD4-6BB0-4C0A-BF17-0B26C331AD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53B1CDD4-6BB0-4C0A-BF17-0B26C331AD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53B1CDD4-6BB0-4C0A-BF17-0B26C331AD3A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29452085-2E9B-4FCC-95EF-C4707B4D4131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29452085-2E9B-4FCC-95EF-C4707B4D4131}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29452085-2E9B-4FCC-95EF-C4707B4D4131}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29452085-2E9B-4FCC-95EF-C4707B4D4131}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
