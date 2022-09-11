@@ -34,10 +34,10 @@ namespace Api.Controllers
         }
 
         [ServiceFilter(typeof(NotFoundFilter<Product>))]
-        [HttpGet("{id}")]
+        [HttpGet("{id}")] 
         public async Task<IActionResult> GetById(int id)
         {
-            var product = await this._productService.GetByIdAsync(id);
+            var product = await this._productService.GetByIdAsync(id); 
 
             var productsDto = _mapper.Map<ProductDto>(product);
 
@@ -47,7 +47,7 @@ namespace Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Save(ProductDto productDto)
         {
-            var product = await _productService.AddAsync(_mapper.Map<Product>(productDto));
+            var product = await _productService.AddAsync(_mapper.Map<Product>(productDto));  
 
             var productsDto = _mapper.Map<ProductDto>(product);
 
