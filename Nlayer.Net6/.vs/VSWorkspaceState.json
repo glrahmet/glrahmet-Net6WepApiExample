@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Nlayer.Net6",
+    "\\Nlayer.Net6\\Core",
+    "\\Nlayer.Net6\\Core\\Repositories",
+    "\\Nlayer.Net6\\Web",
+    "\\Nlayer.Net6\\Web\\Controllers"
+  ],
+  "SelectedNode": "\\Nlayer.Net6\\Web\\Controllers\\ProductController.cs",
+  "PreviewInSolutionExplorer": false
+}
